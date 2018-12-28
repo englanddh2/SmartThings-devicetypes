@@ -47,24 +47,24 @@ metadata {
 	tiles(scale: 2) {
 		multiAttributeTile(name:"switch", type: "lighting", width: 6, height: 4, canChangeIcon: true){
 			tileAttribute ("device.switch", key: "PRIMARY_CONTROL") {
-                attributeState "off", label: 'Closed', action: "switch.on", icon: "st.doors.garage.garage-closed", backgroundColor: "#79b821", nextState:"openingdoor"
-				attributeState "on", label: 'Open', action: "switch.off", icon: "st.doors.garage.garage-open", backgroundColor: "#ffa81e", nextState:"closingdoor"
-                attributeState "closingdoor", label:'Closing', icon:"st.doors.garage.garage-closing", backgroundColor:"#ffd700"
-                attributeState "openingdoor", label:'Opening', icon:"st.doors.garage.garage-opening", backgroundColor:"#ffd700"
+                attributeState "off", label: 'Closed', action: "switch.on", icon: "https://raw.githubusercontent.com/englanddh2/SmartThings-devicetypes/master/coop-door-closed.png", backgroundColor: "#79b821", nextState:"openingdoor"
+				attributeState "on", label: 'Open', action: "switch.off", icon: "https://raw.githubusercontent.com/englanddh2/SmartThings-devicetypes/master/coop-door-opened.png", backgroundColor: "#ffa81e", nextState:"closingdoor"
+                attributeState "closingdoor", label:'Closing', icon:"https://raw.githubusercontent.com/englanddh2/SmartThings-devicetypes/master/coop-door-closing.png", backgroundColor:"#ffd700"
+                attributeState "openingdoor", label:'Opening', icon:"https://raw.githubusercontent.com/englanddh2/SmartThings-devicetypes/master/coop-door-opening.png", backgroundColor:"#ffd700"
 			}
             tileAttribute ("device.statusText", key: "SECONDARY_CONTROL") {
            		attributeState "statusText", label:'${currentValue}'
             }
 		}
    		standardTile("open", "device.door", inactiveLabel: false, decoration: "flat", width: 2, height: 2) {
-			state "default", label:'open', action:"door control.open", icon:"st.doors.garage.garage-opening"
+			state "default", label:'open', action:"door control.open", icon:"https://raw.githubusercontent.com/englanddh2/SmartThings-devicetypes/master/coop-door-opening.png"
 		}
 		standardTile("close", "device.door", inactiveLabel: false, decoration: "flat", width: 2, height: 2) {
-			state "default", label:'close', action:"door control.close", icon:"st.doors.garage.garage-closing"
+			state "default", label:'close', action:"door control.close", icon:"https://raw.githubusercontent.com/englanddh2/SmartThings-devicetypes/master/coop-door-closing.png"
 		}
         standardTile("contact", "device.contact", width: 2, height: 2) {
-			state "open", label: '${name}', icon: "st.contact.contact.open", backgroundColor: "#79b821"
-			state "closed", label: '${name}', icon: "st.contact.contact.closed", backgroundColor: "#ffffff"
+			state "open", label: '${name}', icon: "https://raw.githubusercontent.com/englanddh2/SmartThings-devicetypes/master/coop-door-opened.png", backgroundColor: "#79b821"
+			state "closed", label: '${name}', icon: "https://raw.githubusercontent.com/englanddh2/SmartThings-devicetypes/master/coop-door-closed.png", backgroundColor: "#ffffff"
 		}
 		standardTile("refresh", "device.switch", width: 2, height: 2, decoration: "flat") {
 			state "default", label:'', action:"refresh.refresh", icon:"st.secondary.refresh"
